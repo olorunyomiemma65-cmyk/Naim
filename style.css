@@ -137,7 +137,7 @@ hr {
 }
 
 /* ── TABLET (max 768px) ── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .menu-toggle { display: flex; }
 
@@ -180,7 +180,7 @@ hr {
 }
 
 /* ── MOBILE (max 480px) ── */
-@media (max-width: 480px) {
+@media (max-width: 414px) {
 
     .item img { width: 30px; }
     .item h1  { font-size: 18px; }
