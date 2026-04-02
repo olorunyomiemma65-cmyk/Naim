@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin:0 ;
+    box-sizing: border-box;
+    font-family:;
+}
+main{
+    background-image: url(./asset/clean.png);
+    /* border: solid 1px red; */
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 95vh;
+    
+    }
+
+.red{
+    border: solid 1px grey;
+    border: none;
+    height: 50px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    
+}
+
+.item{
+    display: flex;
+    justify-content:  space-between;
+    padding-left: 10px;
+}
+.item img{
+    width: 38px;
+}
+
+.item1 a{
+    text-decoration: none;
+    color: black;
+}
+.item1 a:hover{
+    color: orangered;
+}
+.item1{
+    width: 60%;
+    /* border: solid 1px grey; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-right: 15px;
+}
+
+.item-2{
+    /* border: solid 1px red; */
+    padding-top: 100px;
+   margin-left: 40px;
+}
+h2{
+    color:rgb(1, 1, 91);
+    font-size: 48px;
+}
+.red-text{
+    color: rgb(1, 79, 1);
+}
+
+.item-2 p{
+    padding-top: 15px;
+    
+}
+.item-1-1{
+    font-size: 32px;
+}
+.item-1-2{
+    padding-bottom: 10px;
+}
+hr{
+    width: 100px;
+      background-color: green;
+    height: 5px;
+  
+}
+.item-1-3{
+    border: solid 1px blue;
+    border: none;
+    width: 180px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+}
+.item-1-3:hover{
+    color:orangered;
+}
+

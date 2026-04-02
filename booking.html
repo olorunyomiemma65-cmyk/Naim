@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purivo — Booking services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="shortcut icon" href="asset/8232913-200.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="asset/8232913-200.png" alt="Purivo Logo">
+            </div>
+            Purivo
+        </a>
+        <div class="nav-right">
+            <span class="nav-user" id="nav-user"></span>
+            <button class="btn-logout" id="logout-btn">Log out</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-badge">✨ Book in under 2 minutes</div>
+        <h1>Schedule your <em>perfect clean</em></h1>
+        <p>Choose your service, pick a date and time, and our professional team will take care of the rest.</p>
+    </div>
+
+    <!-- MAIN -->
+    <div class="section">
+
+        <!-- STEP 1 -->
+        <div class="section-label">Step 1</div>
+        <div class="section-title">Choose a service</div>
+
+        <div class="services-grid">
+            <div class="service-card" data-service="Home Cleaning" data-price="₦15,000">
+                <span class="service-icon">🏠</span>
+                <div class="service-name">Home Cleaning</div>
+                <div class="service-desc">Full residential clean including rooms, kitchen & bathrooms</div>
+                <div class="service-price">From ₦15,000</div>
+            </div>
+            <div class="service-card" data-service="Office Cleaning" data-price="₦25,000">
+                <span class="service-icon">🏢</span>
+                <div class="service-name">Office Cleaning</div>
+                <div class="service-desc">Professional workspace cleaning for a productive environment</div>
+                <div class="service-price">From ₦25,000</div>
+            </div>
+            <div class="service-card" data-service="Deep Cleaning" data-price="₦35,000">
+                <span class="service-icon">🧹</span>
+                <div class="service-name">Deep Cleaning</div>
+                <div class="service-desc">Thorough top-to-bottom clean including hard-to-reach areas</div>
+                <div class="service-price">From ₦35,000</div>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="section-label">Step 2</div>
+        <div class="section-title">Your details</div>
+
+        <div class="booking-form">
+            <form id="booking-form" novalidate>
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" placeholder="Jane Doe" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+234 800 000 0000" required>
+                    </div>
+
+                    <div class="field full">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="field full">
+                        <label for="address">Property Address</label>
+                        <input type="text" id="address" placeholder="12 Anywhere Street, Lagos" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" required>
+                            <option value="" disabled selected>Select a time</option>
+                            <option value="8:00 AM">8:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="rooms">Number of Rooms</label>
+                        <select id="rooms">
+                            <option value="1">1 Room</option>
+                            <option value="2">2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4 Rooms</option>
+                            <option value="5+">5+ Rooms</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="frequency">Frequency</label>
+                        <select id="frequency">
+                            <option value="One-time">One-time</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Bi-weekly">Bi-weekly</option>
+                            <option value="Monthly">Monthly</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" placeholder="Any special instructions, areas of focus, pets, access info..."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <button type="submit" class="btn-submit" id="submit-btn">
+                    Confirm Booking →
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONFIRMATION OVERLAY -->
+    <div class="confirm-overlay" id="confirm-overlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">✅</div>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you! Your cleaning has been scheduled. We'll reach out shortly to confirm your appointment.</p>
+            <p>Note payment after recognisation.</p>
+            <div class="confirm-details" id="confirm-details"></div>
+            <button class="btn-confirm-close" id="confirm-close">Done</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toasts"></div>
+
+    <!-- Firebase auth check -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCqhDIaLS9PfMniZhCxa6kzjZV546AhNDQ",
+            authDomain: "test-bc41d.firebaseapp.com",
+            projectId: "test-bc41d",
+            storageBucket: "test-bc41d.firebasestorage.app",
+            messagingSenderId: "884871315952",
+            appId: "1:884871315952:web:6ee7bf770d821ff64b5d35",
+            measurementId: "G-9VJDQ0L0GD"
+        };
+
+        const app  = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, user => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                document.getElementById('nav-user').textContent = user.email;
+                document.getElementById('email').value = user.email;
+            }
+        });
+
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await signOut(auth);
+            window.location.href = 'login.html';
+        });
+    </script>
+
+    <!-- EmailJS (optional — only needed when you add your keys to booking.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Booking logic -->
+    <script src="booking.js"></script>
+
+</body>
+</html>

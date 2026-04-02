@@ -1,0 +1,54 @@
+<svg width="100%" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D9E75"/>
+      <stop offset="100%" stop-color="#0F6E56"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DCAA5"/>
+      <stop offset="100%" stop-color="#1D9E75"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9FE1CB"/>
+      <stop offset="100%" stop-color="#1D9E75"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background card -->
+  <rect x="140" y="60" width="400" height="300" rx="24" fill="#0F2820" style="fill:rgb(15, 40, 32);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Outer decorative ring -->
+  <circle cx="340" cy="185" r="68" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.5" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Icon: stylized droplet -->
+  <path d="M340 122 C340 122, 310 156, 310 172 C310 190, 324 204, 340 204 C356 204, 370 190, 370 172 C370 156, 340 122, 340 122Z" fill="url(#dropGrad)" opacity="0.95" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Sparkle / shine inside droplet -->
+  <ellipse cx="330" cy="160" rx="5" ry="8" fill="white" opacity="0.3" transform="rotate(-15 330 160)" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Leaf swoosh overlapping droplet -->
+  <path d="M325 192 C318 172, 324 148, 348 140 C362 136, 374 144, 368 158 C360 174, 340 184, 325 192Z" fill="url(#leafGrad)" opacity="0.92" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.92;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Small star sparkles -->
+  <g fill="#9FE1CB" opacity="0.8" style="fill:rgb(159, 225, 203);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <polygon points="295,138 297,133 299,138 304,140 299,142 297,147 295,142 290,140" transform="scale(0.7) translate(135,58)" style="fill:rgb(159, 225, 203);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <polygon points="295,138 297,133 299,138 304,140 299,142 297,147 295,142 290,140" transform="scale(0.5) translate(430,100)" style="fill:rgb(159, 225, 203);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <polygon points="295,138 297,133 299,138 304,140 299,142 297,147 295,142 290,140" transform="scale(0.55) translate(540,50)" style="fill:rgb(159, 225, 203);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="340" y="238" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" letter-spacing="8" text-anchor="middle" fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:46px;font-weight:700;text-anchor:middle;dominant-baseline:auto">PURIVO</text>
+
+  <!-- Tagline divider -->
+  <line x1="220" y1="254" x2="460" y2="254" stroke="#1D9E75" stroke-width="1" opacity="0.6" style="fill:rgb(0, 0, 0);stroke:rgb(29, 158, 117);color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline -->
+  <text x="340" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="400" letter-spacing="4" text-anchor="middle" fill="#5DCAA5" opacity="0.9" style="fill:rgb(93, 202, 165);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">CLEAN · FRESH · PURE</text>
+
+  <!-- Small dot accents on tagline -->
+  <circle cx="219" cy="265" r="2" fill="#1D9E75" opacity="0.5" style="fill:rgb(29, 158, 117);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="461" cy="265" r="2" fill="#1D9E75" opacity="0.5" style="fill:rgb(29, 158, 117);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Version with white background (light version label) -->
+  <text x="340" y="340" font-family="Georgia, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle" fill="#5DCAA5" opacity="0.4" style="fill:rgb(93, 202, 165);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:Georgia, sans-serif;font-size:10px;font-weight:400;text-anchor:middle;dominant-baseline:auto">CLEANING SERVICES</text>
+</svg>

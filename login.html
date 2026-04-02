@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purivo — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="asset/8232913-200.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <!-- <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div> -->
+
+        <div class="logo">
+            <div class="logo-mark">
+                <a href="index.html"><img src="./asset/8232913-200.png" alt="Purivo Logo"></a>
+            </div>
+            Purivo
+        </div>
+
+        <div class="panel-copy">
+            <h1>Spotless spaces,<br><em>every single time.</em></h1>
+            <p>Book, manage and track your cleaning services all in one place. Your home deserves the best care.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                Professional-grade cleaning
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                Easy online booking
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                Trusted & insured cleaners
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+        <div class="auth-card">
+
+            <div class="tabs">
+                <div class="tab active" id="login-tab">Login</div>
+                <div class="tab" id="signup-tab">Sign Up</div>
+            </div>
+
+            <div class="forms-wrap">
+
+                <!-- Login -->
+                <form class="form active" id="login-form" novalidate>
+                    <div class="form-title">Welcome back.</div>
+                    <div class="form-subtitle">Sign in to manage your bookings.</div>
+
+                    <div class="field">
+                        <label for="login-email">Email</label>
+                        <div class="input-wrap">
+                            <input type="email" id="login-email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="login-password">Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                            <button type="button" class="eye-btn" data-target="login-password">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="row-meta">
+                        <span class="forgot-link" id="forgot-link">Forgot password?</span>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="login-btn">Sign In</button>
+                    <div class="switch-line">No account? <span id="to-signup">Create one →</span></div>
+                </form>
+
+                <!-- Sign Up -->
+                <form class="form" id="signup-form" novalidate>
+                    <div class="form-title">Get started.</div>
+                    <div class="form-subtitle">Create your free Purivo account today.</div>
+
+                    <div class="field">
+                        <label for="signup-name">Full Name</label>
+                        <div class="input-wrap">
+                            <input type="text" id="signup-name" placeholder="Jane Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signup-email">Email</label>
+                        <div class="input-wrap">
+                            <input type="email" id="signup-email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signup-password">Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="signup-password" placeholder="min. 6 characters" required>
+                            <button type="button" class="eye-btn" data-target="signup-password">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="field" style="margin-bottom: 24px;">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="signup-confirm" placeholder="repeat password" required>
+                            <button type="button" class="eye-btn" data-target="signup-confirm">👁</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="signup-btn">Create Account</button>
+                    <div class="switch-line">Already a member? <span id="to-login">Sign in →</span></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toasts"></div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal-backdrop" id="forgot-modal">
+        <div class="modal-box">
+            <h3>Reset your password</h3>
+            <p>Enter the email linked to your account and we'll send you a reset link.</p>
+            <div class="field">
+                <label for="reset-email">Email Address</label>
+                <div class="input-wrap">
+                    <input type="email" id="reset-email" placeholder="you@example.com">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-ghost" id="cancel-reset">Cancel</button>
+                <button class="btn-modal-primary" id="send-reset">Send Link</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase (module) -->
+    <script type="module" src="login.js"></script>
+
+    <!-- Password toggle — runs independently of Firebase -->
+    <script>
+        document.querySelectorAll(".eye-btn").forEach(function(btn) {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var input = document.getElementById(btn.dataset.target);
+                var show = input.getAttribute("type") === "password";
+                input.setAttribute("type", show ? "text" : "password");
+                btn.innerHTML = show ? "🙈" : "👁";
+            });
+        });
+    </script>
+
+</body>
+</html>

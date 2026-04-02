@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purivo — Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ADMIN LOGIN SCREEN -->
+    <div id="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <div class="login-logo-mark">
+                    <svg viewBox="0 0 20 20" fill="none">
+                        <path d="M10 3C10 3 5 8 5 12.5C5 15.538 7.239 18 10 18C12.761 18 15 15.538 15 12.5C15 8 10 3 10 3Z" fill="white"/>
+                        <path d="M10 10C10 10 8 12 8 13.5C8 14.881 8.895 16 10 16" stroke="rgba(29,111,235,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                Purivo
+            </div>
+            <span class="admin-badge">ADMIN ACCESS</span>
+            <div class="login-title">Sign in to Dashboard</div>
+            <div class="login-sub">Only authorized admins can access this page.</div>
+
+            <div class="field">
+                <label for="admin-email">Email</label>
+                <div class="input-wrap">
+                    <input type="email" id="admin-email" placeholder="admin@purivo.com" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="admin-password">Password</label>
+                <div class="input-wrap">
+                    <input type="password" id="admin-password" placeholder="••••••••" required>
+                    <button type="button" class="eye-btn" id="toggle-pw">👁</button>
+                </div>
+            </div>
+
+            <button class="btn-login" id="admin-login-btn">Sign In to Dashboard</button>
+            <div class="login-error" id="login-error">Incorrect email or password. Access denied.</div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard">
+        <nav>
+            <div class="nav-left">
+                <a href="booking.html" class="nav-logo">
+                    <div class="nav-logo-mark">
+                        <svg viewBox="0 0 20 20" fill="none">
+                            <path d="M10 3C10 3 5 8 5 12.5C5 15.538 7.239 18 10 18C12.761 18 15 15.538 15 12.5C15 8 10 3 10 3Z" fill="white"/>
+                            <path d="M10 10C10 10 8 12 8 13.5C8 14.881 8.895 16 10 16" stroke="rgba(29,111,235,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    Purivo
+                </a>
+                <span class="nav-badge">ADMIN</span>
+            </div>
+            <div class="nav-right">
+                <span class="nav-user" id="nav-user"></span>
+                <button class="btn-logout" id="logout-btn">Log out</button>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div class="page-title">Dashboard</div>
+            <div class="page-sub">Manage all Purivo bookings and customers</div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">📋</div>
+                    <div class="stat-value" id="stat-total">—</div>
+                    <div class="stat-label">Total Bookings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon yellow">⏳</div>
+                    <div class="stat-value" id="stat-pending">—</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <div class="stat-value" id="stat-confirmed">—</div>
+                    <div class="stat-label">Confirmed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">❌</div>
+                    <div class="stat-value" id="stat-cancelled">—</div>
+                    <div class="stat-label">Cancelled</div>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <div class="search-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-input" placeholder="Search name or email...">
+                    </div>
+                    <select class="filter-select" id="filter-status">
+                        <option value="all">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <select class="filter-select" id="filter-service">
+                        <option value="all">All Services</option>
+                        <option value="Home Cleaning">Home Cleaning</option>
+                        <option value="Office Cleaning">Office Cleaning</option>
+                        <option value="Deep Cleaning">Deep Cleaning</option>
+                    </select>
+                </div>
+                <div class="total-label">Showing <strong id="showing-count">0</strong> bookings</div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Service</th>
+                            <th>Date & Time</th>
+                            <th>Address</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-tbody">
+                        <tr class="loading-row"><td colspan="7">Loading bookings...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAIL MODAL -->
+    <div class="modal-backdrop" id="detail-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-title" id="modal-customer-name">—</div>
+                    <div class="modal-subtitle" id="modal-customer-email">—</div>
+                </div>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="detail-grid" id="modal-details"></div>
+            <div class="modal-actions" id="modal-actions"></div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toasts"></div>
+
+    <!-- Plain script (password toggle — runs independently) -->
+    <script src="admin.js"></script>
+
+    <!-- Firebase module script -->
+    <script type="module" src="admin-firebase.js"></script>
+
+</body>
+</html>
