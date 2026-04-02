@@ -20,7 +20,7 @@ const EMAILJS_CONFIRM_TEMPLATE = "template_confirm";   // ← create this templa
 
 // ======= ADD ALL ADMIN EMAILS HERE =======
 const ADMIN_EMAILS = [
-    "olorunyomiemma@gmail.com",     // ← replace with your email
+    "olorunyomiemma65@gmail.com",     // ← replace with your email
     // "second-admin@email.com", // ← add more admins here
 ];
 const isAdmin = email => ADMIN_EMAILS.includes(email);
