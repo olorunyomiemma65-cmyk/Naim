@@ -12,10 +12,16 @@ const firebaseConfig = {
     measurementId: "G-9VJDQ0L0GD"
 };
 
+// ── EMAILJS CONFIG ──
+const EMAILJS_PUBLIC_KEY       = "mgXvrQKIT2yNaWdH3";
+const EMAILJS_SERVICE_ID       = "service_fpdlbxb";
+const EMAILJS_CANCEL_TEMPLATE  = "template_cancel";    // ← create this template in EmailJS
+const EMAILJS_CONFIRM_TEMPLATE = "template_confirm";   // ← create this template in EmailJS
+
 // ======= ADD ALL ADMIN EMAILS HERE =======
 const ADMIN_EMAILS = [
-    "olorunyomiemma65@gmail.com",     // ← replace with your email
-                                     // ← add more admins here
+    "your-admin@email.com",     // ← replace with your email
+    // "second-admin@email.com", // ← add more admins here
 ];
 const isAdmin = email => ADMIN_EMAILS.includes(email);
 // ==========================================
@@ -167,9 +173,33 @@ function renderTable() {
 // ── UPDATE STATUS ──
 window.updateStatus = async function(id, status) {
     try {
+        // Update Firestore
         await updateDoc(doc(db, 'bookings', id), { status });
-        toast('success', 'Updated!', `Booking marked as ${status}.`);
+
+        // Find booking details to send email
+        const b = allBookings.find(x => x.id === id);
+        if (b && b.email) {
+            const templateId = status === 'cancelled'
+                ? EMAILJS_CANCEL_TEMPLATE
+                : EMAILJS_CONFIRM_TEMPLATE;
+
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+            await emailjs.send(EMAILJS_SERVICE_ID, templateId, {
+                to_email:      b.email,
+                customer_name: b.name     || 'Customer',
+                service:       b.service  || '—',
+                date:          b.date     || '—',
+                time:          b.time     || '—',
+                address:       b.address  || '—',
+                price:         b.price    || '—',
+                status:        status.charAt(0).toUpperCase() + status.slice(1)
+            });
+            toast('success', 'Updated!', `Booking ${status} & email sent to ${b.email}.`);
+        } else {
+            toast('success', 'Updated!', `Booking marked as ${status}.`);
+        }
     } catch(err) {
+        console.error(err);
         toast('error', 'Error', err.message);
     }
 };
