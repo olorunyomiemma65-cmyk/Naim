@@ -15,8 +15,8 @@ const firebaseConfig = {
 // ── EMAILJS CONFIG ──
 const EMAILJS_PUBLIC_KEY       = "mgXvrQKIT2yNaWdH3";
 const EMAILJS_SERVICE_ID       = "service_fpdlbxb";
-const EMAILJS_CANCEL_TEMPLATE  = "template_cancel";    // ← create this template in EmailJS
-const EMAILJS_CONFIRM_TEMPLATE = "template_confirm";   // ← create this template in EmailJS
+const EMAILJS_CANCEL_TEMPLATE  = "template_cance";    // ← create this template in EmailJS
+const EMAILJS_CONFIRM_TEMPLATE = "template_d0ajzh7";   // ← create this template in EmailJS
 
 // ======= ADD ALL ADMIN EMAILS HERE =======
 const ADMIN_EMAILS = [
