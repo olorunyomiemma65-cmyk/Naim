@@ -3,9 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Purivo — Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./asset/8232913-200.png" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    
+
+    <!-- NAV -->
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="nav-brand">
+                    <img src="./asset/8232913-200.png" alt="Purivo Logo">
+                    <span>Purivo</span>
+                </div>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links" id="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="contact.html" class="active">Contact us</a>
+                    <a href="login.html">Login</a>
+                    <a href="admin.html">Admin</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-tag">Get in touch</p>
+        <h1>We'd love to <em>hear from you</em></h1>
+        <p class="hero-sub">Questions, bookings, or feedback — we're here to help.</p>
+    </section>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- LEFT — Info cards -->
+        <div class="info-col">
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">+234 800 000 0000</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">hello@purivo.com</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Abuja, Nigeria</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Working Hours</span>
+                    <span class="info-value">Mon – Sat, 8am – 6pm</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT — Contact form -->
+        <div class="form-col">
+            <p class="form-title">Send us a message</p>
+
+            <form id="contact-form" novalidate>
+
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="c-name">Full Name</label>
+                        <input type="text" id="c-name" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="field">
+                        <label for="c-email">Email Address</label>
+                        <input type="email" id="c-email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="c-phone">Phone Number</label>
+                    <input type="tel" id="c-phone" placeholder="+234 800 000 0000">
+                </div>
+
+                <div class="field">
+                    <label for="c-subject">Subject</label>
+                    <input type="text" id="c-subject" placeholder="How can we help?" required>
+                </div>
+
+                <div class="field">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-send" id="send-btn">Send Message</button>
+
+            </form>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Purivo Cleaning Services · Abuja, Nigeria</p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toasts"></div>
+
+    <!-- Hamburger toggle -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        // ── EMAILJS CONFIG ──
+        var EMAILJS_PUBLIC_KEY  = "mgXvrQKIT2yNaWdH3";
+        var EMAILJS_SERVICE_ID  = "service_fpdlbxb";
+        var CONTACT_TEMPLATE_ID = "template_contact"; // ← create a contact template in EmailJS
+
+        function toast(type, title, msg) {
+            var icons = { success: '✓', error: '✕' };
+            var container = document.getElementById('toasts');
+            var el = document.createElement('div');
+            el.className = 'toast ' + type;
+            el.innerHTML = '<div class="toast-icon">' + (icons[type]||'◆') + '</div><div class="toast-body"><div class="toast-title">' + title + '</div><div class="toast-msg">' + msg + '</div></div>';
+            container.appendChild(el);
+            setTimeout(function() {
+                el.classList.add('removing');
+                setTimeout(function() { el.remove(); }, 300);
+            }, 4000);
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var name    = document.getElementById('c-name').value.trim();
+            var email   = document.getElementById('c-email').value.trim();
+            var phone   = document.getElementById('c-phone').value.trim();
+            var subject = document.getElementById('c-subject').value.trim();
+            var message = document.getElementById('c-message').value.trim();
+
+            if (!name)    { toast('error', 'Missing name',    'Please enter your full name.'); return; }
+            if (!email)   { toast('error', 'Missing email',   'Please enter your email address.'); return; }
+            if (!subject) { toast('error', 'Missing subject', 'Please enter a subject.'); return; }
+            if (!message) { toast('error', 'Missing message', 'Please write your message.'); return; }
+
+            var btn = document.getElementById('send-btn');
+            btn.disabled    = true;
+            btn.textContent = 'Sending...';
+
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+            emailjs.send(EMAILJS_SERVICE_ID, CONTACT_TEMPLATE_ID, {
+                from_name:    name,
+                from_email:   email,
+                phone:        phone || 'Not provided',
+                subject:      subject,
+                message:      message
+            }).then(function() {
+                btn.disabled    = false;
+                btn.textContent = 'Send Message';
+                toast('success', 'Message sent!', 'We\'ll get back to you shortly.');
+                document.getElementById('contact-form').reset();
+            }).catch(function(err) {
+                console.error(err);
+                btn.disabled    = false;
+                btn.textContent = 'Send Message';
+                toast('error', 'Failed to send', 'Please try again or call us directly.');
+            });
+        });
+    </script>
+
 </body>
 </html>

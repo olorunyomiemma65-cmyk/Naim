@@ -15,12 +15,12 @@ const firebaseConfig = {
 // ── EMAILJS CONFIG ──
 const EMAILJS_PUBLIC_KEY       = "mgXvrQKIT2yNaWdH3";
 const EMAILJS_SERVICE_ID       = "service_fpdlbxb";
-const EMAILJS_CANCEL_TEMPLATE  = "template_d0ajzh7";    // ← create this template in EmailJS
-const EMAILJS_CONFIRM_TEMPLATE = "template_d0ajzh7";   // ← create this template in EmailJS
+const EMAILJS_CANCEL_TEMPLATE  = "template_cancel";    // ← create this template in EmailJS
+const EMAILJS_CONFIRM_TEMPLATE = "template_confirm";   // ← create this template in EmailJS
 
 // ======= ADD ALL ADMIN EMAILS HERE =======
 const ADMIN_EMAILS = [
-    "olorunyomiemma65@gmail.com",     // ← replace with your email
+    "your-admin@email.com",     // ← replace with your email
     // "second-admin@email.com", // ← add more admins here
 ];
 const isAdmin = email => ADMIN_EMAILS.includes(email);
@@ -162,8 +162,10 @@ function renderTable() {
             <td>
                 <div class="actions">
                     <button class="btn-view" onclick="openDetail('${b.id}')">View</button>
-                    ${b.status !== 'confirmed' ? `<button class="btn-confirm-booking" onclick="updateStatus('${b.id}','confirmed')">Confirm</button>` : ''}
-                    ${b.status !== 'cancelled' ? `<button class="btn-cancel-booking" onclick="updateStatus('${b.id}','cancelled')">Cancel</button>` : ''}
+                    ${b.status === 'pending' ? `<button class="btn-confirm-booking" onclick="updateStatus('${b.id}','confirmed')">Confirm</button>` : ''}
+                    ${b.status === 'pending' ? `<button class="btn-cancel-booking" onclick="updateStatus('${b.id}','cancelled')">Cancel</button>` : ''}
+                    ${b.status === 'confirmed' ? `<span style="font-size:12px;color:var(--success);font-weight:600;">✓ Confirmed</span>` : ''}
+                    ${b.status === 'cancelled' ? `<span style="font-size:12px;color:var(--danger);font-weight:600;">✕ Cancelled</span>` : ''}
                 </div>
             </td>
         </tr>
@@ -227,9 +229,13 @@ window.openDetail = function(id) {
         `<div class="detail-row"><span class="label">${label}</span><span class="value">${value}</span></div>`
     ).join('');
 
-    document.getElementById('modal-actions').innerHTML = `
-        ${b.status !== 'confirmed' ? `<button class="btn-modal-confirm" onclick="updateStatus('${b.id}','confirmed');closeModal()">✓ Confirm Booking</button>` : ''}
-        ${b.status !== 'cancelled' ? `<button class="btn-modal-cancel" onclick="updateStatus('${b.id}','cancelled');closeModal()">✕ Cancel Booking</button>` : ''}
+    document.getElementById('modal-actions').innerHTML = b.status === 'pending' ? `
+        <button class="btn-modal-confirm" onclick="updateStatus('${b.id}','confirmed');closeModal()">✓ Confirm Booking</button>
+        <button class="btn-modal-cancel" onclick="updateStatus('${b.id}','cancelled');closeModal()">✕ Cancel Booking</button>
+    ` : b.status === 'confirmed' ? `
+        <div style="width:100%;text-align:center;padding:12px;background:#dcfce7;border-radius:var(--radius);color:#14532d;font-weight:600;font-size:14px;">✓ This booking has been confirmed</div>
+    ` : `
+        <div style="width:100%;text-align:center;padding:12px;background:#fee2e2;border-radius:var(--radius);color:#7f1d1d;font-weight:600;font-size:14px;">✕ This booking has been cancelled</div>
     `;
 
     document.getElementById('detail-modal').classList.add('open');
