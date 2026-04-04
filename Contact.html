@@ -58,7 +58,7 @@
                 </div>
                 <div class="info-text">
                     <span class="info-label">Phone</span>
-                    <span class="info-value">+234 800 000 0000</span>
+                    <a class="info-value" href="tel:+2348000000000">+234 800 000 0000</a>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                 </div>
                 <div class="info-text">
                     <span class="info-label">Email</span>
-                    <span class="info-value">hello@purivo.com</span>
+                    <span class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e060b0202012e1e1b1c071801400d0103">[email&#160;protected]</a></span>
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
     <div class="toast-container" id="toasts"></div>
 
     <!-- Hamburger toggle -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('menu-toggle').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('open');
         });
@@ -217,12 +217,4 @@
                 document.getElementById('contact-form').reset();
             }).catch(function(err) {
                 console.error(err);
-                btn.disabled    = false;
-                btn.textContent = 'Send Message';
-                toast('error', 'Failed to send', 'Please try again or call us directly.');
-            });
-        });
-    </script>
-
-</body>
-</html>
+              
