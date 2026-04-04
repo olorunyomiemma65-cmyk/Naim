@@ -15,12 +15,12 @@ const firebaseConfig = {
 // ── EMAILJS CONFIG ──
 const EMAILJS_PUBLIC_KEY       = "mgXvrQKIT2yNaWdH3";
 const EMAILJS_SERVICE_ID       = "service_fpdlbxb";
-const EMAILJS_CANCEL_TEMPLATE  = "template_cancel";    // ← create this template in EmailJS
-const EMAILJS_CONFIRM_TEMPLATE = "template_confirm";   // ← create this template in EmailJS
+const EMAILJS_CANCEL_TEMPLATE  = "template_d0ajzh7";    
+const EMAILJS_CONFIRM_TEMPLATE = "template_d0ajzh7";   
 
-// ======= ADD ALL ADMIN EMAILS HERE =======
+// =======  ADMIN EMAILS HERE ======
 const ADMIN_EMAILS = [
-    "your-admin@email.com",     // ← replace with your email
+    "olorunyomiemma65@gmail.com",     
     // "second-admin@email.com", // ← add more admins here
 ];
 const isAdmin = email => ADMIN_EMAILS.includes(email);
