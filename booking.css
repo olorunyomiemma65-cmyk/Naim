@@ -55,7 +55,7 @@ nav {
     place-items: center;
 }
 
-.nav-logo-mark svg { width: 18px; height: 18px; }
+.nav-logo-mark img { width: 30px; height: 30px; }
 
 .nav-right { display: flex; align-items: center; gap: 16px; }
 

@@ -101,7 +101,7 @@ body {
 
 /* ── HERO ── */
 .hero {
-    background: var(--green);
+    background:var(--accent) ;
     padding: 48px 24px;
     text-align: center;
     position: relative;
@@ -190,12 +190,12 @@ body {
 .info-icon {
     width: 40px;
     height: 40px;
-    background: var(--green-light);
+    background: var(--accent);
     border-radius: 10px;
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    color: var(--green-dark);
+    color: var(--bg);
 }
 
 .info-icon svg { width: 18px; height: 18px; }
