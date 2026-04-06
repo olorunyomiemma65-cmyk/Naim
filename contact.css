@@ -52,7 +52,7 @@ body {
     gap: 8px;
     font-size: 20px;
     font-weight: 700;
-    color: var(--green);
+    color: var(--accent);
     flex-shrink: 0;
 }
 
