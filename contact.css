@@ -17,7 +17,6 @@
     --green-dark: #14532d;
     --green-light: #dcfce7;
     --danger: #e03e3e;
-    --success: #16a34a;
     --radius: 12px;
     --radius-lg: 20px;
 }
@@ -101,7 +100,7 @@ body {
 
 /* ── HERO ── */
 .hero {
-    background:var(--accent) ;
+    background: var(--accent);
     padding: 48px 24px;
     text-align: center;
     position: relative;
@@ -195,7 +194,7 @@ body {
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    color: var(--bg);
+    color: #ffffff;
 }
 
 .info-icon svg { width: 18px; height: 18px; }
@@ -345,7 +344,7 @@ footer {
     max-width: 320px;
 }
 
-.toast.success { border-left: 3px solid var(--success); }
+.toast.success { border-left: 3px solid var(--green); }
 .toast.error   { border-left: 3px solid var(--danger); }
 .toast-icon { font-size: 18px; flex-shrink: 0; }
 .toast-body { display: flex; flex-direction: column; gap: 2px; }
