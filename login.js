@@ -82,13 +82,29 @@ modal.addEventListener('click', e => {
 document.getElementById('send-reset').addEventListener('click', async () => {
     const email = document.getElementById('reset-email').value.trim();
     if (!email) { toast('error', 'Missing email', 'Please enter your email address.'); return; }
+
+    const btn = document.getElementById('send-reset');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
     try {
         await sendPasswordResetEmail(auth, email);
-        toast('success', 'Email sent!', `Reset link sent to ${email}.`);
+        toast('success', 'Email sent!', `Check your inbox (and spam folder) for ${email}.`);
         modal.classList.remove('open');
         document.getElementById('reset-email').value = '';
     } catch (err) {
-        toast('error', 'Failed', err.message);
+        console.error('Password reset error:', err.code, err.message);
+
+        let msg = err.message;
+        if (err.code === 'auth/user-not-found')     msg = 'No account found with this email address.';
+        if (err.code === 'auth/invalid-email')       msg = 'Please enter a valid email address.';
+        if (err.code === 'auth/too-many-requests')   msg = 'Too many attempts. Please try again later.';
+        if (err.code === 'auth/network-request-failed') msg = 'Network error. Check your internet connection.';
+
+        toast('error', 'Failed to send', msg);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Link';
     }
 });
 
