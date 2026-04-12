@@ -77,7 +77,7 @@ body {
 }
 
 .nav-links a:hover { color: orangered; }
-.nav-links a.active { color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 2px; }
+.nav-links a.active { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 
 .menu-toggle {
     display: none;
@@ -292,7 +292,7 @@ a.info-value:hover {
 .btn-send {
     width: 100%;
     padding: 15px;
-    background: var(--green);
+    background: var(--accent);
     color: white;
     border: none;
     border-radius: var(--radius);
