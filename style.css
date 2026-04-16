@@ -232,7 +232,7 @@ hr {
 
 /* ── FOOTER RESPONSIVE ── */
 @media (max-width: 768px) {
-    .footer { padding: 36px 24px 0; }
+    .footer { padding: 36px 14px 0; }
 
     .footer-inner {
         grid-template-columns: 1fr 1fr;
@@ -248,7 +248,7 @@ hr {
     .footer { padding: 28px 16px 0; }
 
     .footer-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns:2, 1fr;
         gap: 24px;
     }
 
