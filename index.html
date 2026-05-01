@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./asset/8232913-200.png" type="image/x-icon">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="shortcut icon" href="./asset/img/8232913-200.png" type="image/x-icon">
     <title>Purivo</title>
 </head>
+
 <body>
 
     <header>
@@ -14,7 +16,7 @@
             <div class="red">
 
                 <div class="item">
-                    <img src="./asset/8232913-200.png" alt="Purivo Logo">
+                    <img src="./asset/img/8232913-200.png" alt="Purivo Logo">
                     <h1>Purivo</h1>
                 </div>
 
@@ -30,7 +32,6 @@
                     <a href="booking.html">Booking</a>
                     <a href="Contact.html">Contact us</a>
                     <a href="login.html">Login</a>
-                    <a href="admin.html">Admin</a>
                 </div>
 
             </div>
@@ -45,51 +46,53 @@
             <p class="item-1-2">Reliable, affordable and thorough cleaning solutions <br>for your homes and offices.</p>
             <a href="booking.html"><button class="item-1-3">Book Now</button></a>
         </div>
-    </main>
+    </main>s
 
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <img src="./asset/img/8232913-200.png" alt="Purivo Logo">
+                <span>Purivo</span>
+                <p>Clean · Fresh · Pure</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <a href="tel:+2348000000000">📞 +234 800 000 0000</a>
+                <a href="mailto:olorunyomiemma65@gmail.com">✉️ hello@purivo.com</a>
+                <p>📍 Abuja, Nigeria</p>
+                <p>🕐 Mon – Sat, 8am – 6pm</p>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Purivo Cleaning Services · Abuja, Nigeria. All rights reserved.</p>
+        </div>
+    </footer>
     <script>
         // Hamburger toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('nav-links').classList.toggle('open');
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll('.item1 a').forEach(function(link) {
-            link.addEventListener('click', function() {
+        document.querySelectorAll('.item1 a').forEach(function (link) {
+            link.addEventListener('click', function () {
                 document.getElementById('nav-links').classList.remove('open');
             });
         });
     </script>
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-
-        <div class="footer-brand">
-            <img src="./asset/8232913-200.png" alt="Purivo Logo">
-            <span>Purivo</span>
-            <p>Clean · Fresh · Pure</p>
-        </div>
-
-        <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Booking</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="login.html">Login</a>
-        </div>
-
-        <div class="footer-contact">
-            <h4>Contact Us</h4>
-            <a href="tel:+2348000000000">📞 +234 800 000 0000</a>
-            <a href="mailto:olorunyomiemma65@gmail.com">✉️ hello@purivo.com</a>
-            <p>📍 Abuja, Nigeria</p>
-            <p>🕐 Mon – Sat, 8am – 6pm</p>
-        </div>
-
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Purivo Cleaning Services · Abuja, Nigeria. All rights reserved.</p>
-    </div>
-</footer>
 </body>
+
 </html>
