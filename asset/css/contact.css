@@ -30,74 +30,6 @@ body {
     flex-direction: column;
 }
 
-/* ── NAV ── */
-.navbar {
-    background: whitesmoke;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--accent);
-    flex-shrink: 0;
-}
-
-.nav-brand img {
-    width: 34px;
-    height: 34px;
-    object-fit: contain;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover { color: orangered; }
-.nav-links a.active { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 6px;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: #333;
-    border-radius: 3px;
-    transition: all 0.3s;
-}
-
 /* ── HERO ── */
 .hero {
     background: var(--accent);
@@ -238,12 +170,6 @@ a.info-value:hover {
     margin-bottom: 24px;
 }
 
-.field-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
 .field {
     display: flex;
     flex-direction: column;
@@ -301,16 +227,16 @@ a.info-value:hover {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.25s;
-    box-shadow: 0 4px 14px rgba(22,163,74,0.3);
+    box-shadow: 0 4px 14px rgba(29,111,235,0.3);
     margin-top: 4px;
 }
 
-.btn-send:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(22,163,74,0.3); }
+.btn-send:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(29,111,235,0.3); }
 .btn-send:active { transform: translateY(0); }
 .btn-send:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 
 /* ── FOOTER ── */
-footer {
+.contact-footer {
     background: whitesmoke;
     border-top: 1px solid rgba(0,0,0,0.08);
     padding: 18px 24px;
@@ -356,36 +282,7 @@ footer {
 @keyframes slideOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(30px); } }
 
 /* ── RESPONSIVE ── */
-
-/* TABLET */
 @media (max-width: 900px) {
-    .menu-toggle { display: flex; }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 60px; left: 0;
-        width: 100%;
-        background: whitesmoke;
-        border-top: 1px solid #ddd;
-        padding: 8px 0;
-        z-index: 999;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .nav-links.open { display: flex; }
-
-    .nav-links a {
-        padding: 13px 24px;
-        width: 100%;
-        border-bottom: 1px solid #eee;
-        font-size: 15px;
-    }
-
-    .nav-links a:last-child { border-bottom: none; }
-
     .main {
         grid-template-columns: 1fr;
         margin: 28px auto;
@@ -397,30 +294,21 @@ footer {
         gap: 12px;
     }
 
-    .field-grid { grid-template-columns: 1fr; }
-
     .hero h1 { font-size: 28px; }
 }
 
-/* MOBILE */
 @media (max-width: 640px) {
     .hero { padding: 32px 16px; }
     .hero h1 { font-size: 24px; }
     .hero-sub { font-size: 13px; }
-
     .main { padding: 0 14px; margin: 20px auto; }
-
     .info-col { grid-template-columns: 1fr; }
-
     .form-col { padding: 20px 16px; }
     .form-title { font-size: 18px; margin-bottom: 18px; }
-
     .btn-send { font-size: 14px; padding: 13px; }
 }
 
-/* SMALL MOBILE */
 @media (max-width: 380px) {
-    .nav-brand span { font-size: 17px; }
     .info-card { padding: 14px 16px; }
     .info-value { font-size: 13px; }
 }

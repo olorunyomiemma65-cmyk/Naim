@@ -209,8 +209,6 @@ nav {
     box-shadow: 0 4px 24px rgba(29,111,235,0.06);
 }
 
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.form-grid .full { grid-column: 1 / -1; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 
 .field label {
@@ -392,15 +390,11 @@ nav {
 @keyframes slideOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(30px); } }
 
 /* RESPONSIVE */
-/* ── TABLET ── */
 @media (max-width: 900px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .form-grid { grid-template-columns: 1fr; }
-    .form-grid .full { grid-column: 1; }
     .section { padding: 36px 20px; }
 }
 
-/* ── MOBILE ── */
 @media (max-width: 640px) {
     nav { padding: 0 16px; }
     .nav-user { display: none; }
@@ -410,16 +404,12 @@ nav {
     .section { padding: 28px 14px; }
     .section-title { font-size: 20px; }
     .services-grid { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
-    .form-grid .full { grid-column: 1; }
     .booking-form { padding: 20px 16px; }
     .confirm-box { padding: 28px 18px; }
     .confirm-box h2 { font-size: 20px; }
     .btn-submit { font-size: 14px; padding: 13px; }
-    .modal-box { padding: 24px 18px; }
 }
 
-/* ── SMALL MOBILE ── */
 @media (max-width: 380px) {
     .service-card { padding: 18px 14px; }
     .service-icon { font-size: 26px; }
