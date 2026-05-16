@@ -34,5 +34,4 @@
     text-decoration: none;
     color: white;
 }
-/* .nav-login:hover { background: var(--teal-dark) !important; } */
-.Nav-link.active { color: #1f8a9a !important; }
+.nav-link:hover, .nav-link.active { color: #1f8a9a !important; }
