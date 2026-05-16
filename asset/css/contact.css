@@ -10,7 +10,7 @@
     --border-focus: rgba(29,111,235,0.5);
     --text: #0f1c2e;
     --muted: #6b7e99;
-    --accent: #1d6feb;
+    --accent: #1f8a9a;
     --accent-dark: #1558c7;
     --accent-glow: rgba(29,111,235,0.12);
     --green: #16a34a;
@@ -29,6 +29,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 
 /* ── HERO ── */
 .hero {

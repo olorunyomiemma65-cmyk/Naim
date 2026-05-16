@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./asset/img/8232913-200.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="./asset/css/style.css">
     <title>Purivo</title>
 </head>
@@ -26,34 +27,334 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
             <ul class="navbar-nav gap-lg-3 fw-medium">
-                <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="index.html"  class=" Nav-link active">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="service.html"  >Services</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="booking.html">Booking</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Contact.html">Contact us</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="login.html">Login</a></li>
+                <li class="nav-item ms-md-2">
+        <a href="login.html" class="nav-link nav-login">
+          <i class="fa-regular fa-user me-1"></i> Login
+        </a>
+      </li>
             </ul>
         </div>
     </nav>
 
     <!-- HERO -->
-    <main class="hero d-flex align-items-start">
-        <div class="hero-content ps-4 ps-md-5 pt-5 mt-4">
-            <h2 class="fw-bold" style="color: rgb(1,1,91); font-size: clamp(26px, 5vw, 48px); line-height:1.2;">
-                Professional <br>
-                <span style="color: rgb(1,79,1);">Cleaning Services</span><br>
-                in Abuja
-            </h2>
-            <hr style="width:100px; height:5px; background:#1d6feb; border:none; margin: 12px 0 8px;">
-            <p class="fw-semibold mb-2" style="font-size: clamp(18px, 3vw, 30px);">We Make Your Space Sparkle</p>
-            <p class="text-muted mb-3" style="font-size:15px; line-height:1.6;">
-                Reliable, affordable and thorough cleaning solutions <br>for your homes and offices.
-            </p>
-            <a href="booking.html">
-                <button class="btn btn-primary rounded-pill px-4 fw-semibold" style="background:#1d6feb; border:none;">
-                    Book Now
-                </button>
-            </a>
+  
+    <main class="hero">
+  <div id="carouselExampleIndicators" class="carousel slide">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="./asset/img/purivo_slide_1_photo.png" class="d-block w-100" style="object-fit:cover; height:clamp(280px, 60vw, 580px);" alt="Purivo cleaning services">
+        <div class="carousel-caption d-block" style="bottom: 15%; text-shadow: 0 1px 4px rgba(0,0,0,0.4);">
+          <h2 class="fw-bold" style="font-size: clamp(1.2rem, 4vw, 2.8rem); line-height:1.2;">
+            Professional<br>
+            <span style="color:#4caf82;">Cleaning Services</span><br>
+            in Abuja
+          </h2>
+          <hr style="width:80px; height:4px; background:#1d6feb; border:none; margin: 10px auto;">
+          <p class="fw-semibold mb-1" style="font-size: clamp(0.9rem, 2.5vw, 1.4rem);">We Make Your Space Sparkle</p>
+          <p class="mb-3 d-none d-sm-block" style="font-size: clamp(0.8rem, 1.5vw, 0.95rem); line-height:1.6;">
+            Reliable, affordable and thorough cleaning solutions for your homes and offices.
+          </p>
+          <a href="booking.html">
+            <button class="btn btn-primary rounded-pill px-4 fw-semibold" style="background:#1f8a9a; border:none; font-size: clamp(0.8rem, 1.5vw, 1rem);">
+              Book Now
+            </button>
+          </a>
         </div>
-    </main>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="./asset/img/purivo_slide_3_photo.png" class="d-block w-100" style="object-fit:cover; height:clamp(280px, 60vw, 580px);" alt="Purivo home cleaning">
+        <div class="carousel-caption d-block" style="bottom: 15%; text-shadow: 0 1px 4px rgba(0,0,0,0.4);">
+          <h2 class="fw-bold" style="font-size: clamp(1.2rem, 4vw, 2.8rem);">Your Home, Spotless</h2>
+          <a href="booking.html">
+            <button class="btn btn-primary rounded-pill px-4 fw-semibold mt-2" style="background:#1d6feb; border:none;">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="./asset/img/purivo_slide_4_photo.png" class="d-block w-100" style="object-fit:cover; height:clamp(280px, 60vw, 580px);" alt="Purivo office cleaning">
+        <div class="carousel-caption d-block" style="bottom: 15%; text-shadow: 0 1px 4px rgba(0,0,0,0.4);">
+          <h2 class="fw-bold" style="font-size: clamp(1.2rem, 4vw, 2.8rem);">Clean Of</h2>
+          <a href="booking.html">
+            <button class="btn btn-primary rounded-pill px-4 fw-semibold mt-2" style="background:#1d6feb; border:none;">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+</main>
+<!-- SERVICES SECTION -->
+<section class="py-5 bg-white">
+  <div class="container py-4">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="badge rounded-pill px-3 py-2 mb-3 d-inline-block"
+        style="background:#e6f5f7; color:#155f6b; font-size:.7rem; letter-spacing:.12em;">
+        <i class="fa-solid fa-broom me-1"></i> WHAT WE OFFER
+      </span>
+      <h2 class="fw-bold" style="font-size:clamp(1.8rem,3vw,2.5rem); color:#0d1f24; line-height:1.2;">
+        Cleaning Services for <em style="color:#1f8a9a; font-style:italic;">Every Space</em>
+      </h2>
+      <p class="mx-auto mt-2" style="color:#5b7880; max-width:500px; font-size:.95rem; line-height:1.7;">
+        Professional, reliable, and affordable — all packages come with vetted cleaners and a full satisfaction guarantee.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Home Cleaning -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="h-100 p-4 rounded-4 position-relative overflow-hidden"
+          style="background:#f7fafb; border:1.5px solid #daedf1; transition:transform .3s, box-shadow .3s;"
+          onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(31,138,154,.13)'; this.style.borderColor='#a8dce4';"
+          onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='#daedf1';">
+
+          <!-- top accent bar -->
+          <div style="position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg,#1f8a9a,#155f6b); border-radius:16px 16px 0 0;"></div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width:52px;height:52px;background:#e6f5f7;color:#1f8a9a;font-size:1.3rem;">
+              <i class="fa-solid fa-house"></i>
+            </div>
+            <h5 class="fw-bold mb-0" style="color:#0d1f24; font-size:1.1rem;">Home Cleaning</h5>
+          </div>
+
+          <p style="color:#5b7880; font-size:.88rem; line-height:1.7;" class="mb-3">
+            A thorough residential clean that leaves every room fresh, tidy, and sparkling.
+          </p>
+
+          <div class="fw-bold mb-3" style="font-size:1.6rem; color:#155f6b; line-height:1;">
+            ₦15,000 <span style="font-size:.9rem; font-weight:400; opacity:.6;">/ session</span>
+          </div>
+
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> All rooms swept &amp; mopped
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Kitchen surfaces wiped down
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Bathrooms scrubbed &amp; sanitised
+            </li>
+            <li class="d-flex align-items-center gap-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Rubbish removed &amp; bins lined
+            </li>
+          </ul>
+
+          <a href="booking.html" class="btn w-100 rounded-pill text-white fw-500"
+            style="background:#1f8a9a; font-size:.88rem; padding:.7rem;">
+            Book Home Clean <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Office Cleaning (featured) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="h-100 p-4 rounded-4 position-relative overflow-hidden"
+          style="background:linear-gradient(145deg,#155f6b 0%,#1f8a9a 100%); border:1.5px solid transparent; transition:transform .3s, box-shadow .3s;"
+          onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(31,138,154,.25)';"
+          onmouseout="this.style.transform=''; this.style.boxShadow='';">
+
+          <div style="position:absolute; top:0; left:0; right:0; height:3px;
+            background:rgba(255,255,255,.3); border-radius:16px 16px 0 0;"></div>
+
+          <!-- Popular badge -->
+          <span class="badge rounded-pill mb-3 d-inline-block"
+            style="background:#d4a94a; color:#fff; font-size:.68rem; letter-spacing:.08em;">
+            <i class="fa-solid fa-star me-1"></i> MOST POPULAR
+          </span>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width:52px;height:52px;background:rgba(255,255,255,.18);color:#fff;font-size:1.3rem;">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h5 class="fw-bold mb-0" style="color:#fff; font-size:1.1rem;">Office Cleaning</h5>
+          </div>
+
+          <p style="color:rgba(255,255,255,.75); font-size:.88rem; line-height:1.7;" class="mb-3">
+            Keep your workspace spotless so your team stays focused and productive every day.
+          </p>
+
+          <div class="fw-bold mb-3" style="font-size:1.6rem; color:#fff; line-height:1;">
+            ₦25,000 <span style="font-size:.9rem; font-weight:400; opacity:.6;">/ session</span>
+          </div>
+
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#fff;">
+              <i class="fa-solid fa-circle-check" style="color:rgba(255,255,255,.8); flex-shrink:0;"></i> Workstations &amp; desks sanitised
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#fff;">
+              <i class="fa-solid fa-circle-check" style="color:rgba(255,255,255,.8); flex-shrink:0;"></i> Meeting rooms deep-cleaned
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#fff;">
+              <i class="fa-solid fa-circle-check" style="color:rgba(255,255,255,.8); flex-shrink:0;"></i> Restrooms fully disinfected
+            </li>
+            <li class="d-flex align-items-center gap-2" style="font-size:.85rem; color:#fff;">
+              <i class="fa-solid fa-circle-check" style="color:rgba(255,255,255,.8); flex-shrink:0;"></i> Flexible early-morning / after-hours slots
+            </li>
+          </ul>
+
+          <a href="booking.html" class="btn w-100 rounded-pill fw-500"
+            style="background:#fff; color:#155f6b; font-size:.88rem; padding:.7rem;">
+            Book Office Clean <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Deep Cleaning -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="h-100 p-4 rounded-4 position-relative overflow-hidden"
+          style="background:#f7fafb; border:1.5px solid #daedf1; transition:transform .3s, box-shadow .3s;"
+          onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(31,138,154,.13)'; this.style.borderColor='#a8dce4';"
+          onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='#daedf1';">
+
+          <div style="position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg,#1f8a9a,#155f6b); border-radius:16px 16px 0 0;"></div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+              style="width:52px;height:52px;background:#e6f5f7;color:#1f8a9a;font-size:1.3rem;">
+              <i class="fa-solid fa-soap"></i>
+            </div>
+            <h5 class="fw-bold mb-0" style="color:#0d1f24; font-size:1.1rem;">Deep Cleaning</h5>
+          </div>
+
+          <p style="color:#5b7880; font-size:.88rem; line-height:1.7;" class="mb-3">
+            Our most thorough service — top-to-bottom treatment that tackles every hidden corner.
+          </p>
+
+          <div class="fw-bold mb-3" style="font-size:1.6rem; color:#155f6b; line-height:1;">
+            ₦35,000 <span style="font-size:.9rem; font-weight:400; opacity:.6;">/ session</span>
+          </div>
+
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Inside cupboards &amp; wardrobes
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Appliance interiors (oven, fridge)
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Grout, tile &amp; hard-water stain removal
+            </li>
+            <li class="d-flex align-items-center gap-2" style="font-size:.85rem; color:#0d1f24;">
+              <i class="fa-solid fa-circle-check" style="color:#1f8a9a; flex-shrink:0;"></i> Move-in / move-out ready finish
+            </li>
+          </ul>
+
+          <a href="booking.html" class="btn w-100 rounded-pill text-white fw-500"
+            style="background:#1f8a9a; font-size:.88rem; padding:.7rem;">
+            Book Deep Clean <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View all link -->
+    <div class="text-center mt-5">
+      <a href="services.html" style="color:#1f8a9a; font-size:.9rem; font-weight:500; text-decoration:none;">
+        View full services page <i class="fa-solid fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT US SECTION -->
+<section class="py-5" style="background: #f7fafb;">
+  <div class="container py-1 ps-0 pe-0">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6">
+        <span class="badge rounded-pill mb-3 px-3 py-2" style="background:#e6f5f7; color:#155f6b; font-size:0.7rem; letter-spacing:0.12em;">WHO WE ARE</span>
+        <h2 class="fw-bold mb-3" style="font-size: clamp(1.8rem, 3vw, 2.5rem); color:#0d1f24; line-height:1.2;">
+          We bring the <em style="color:#1f8a9a; font-style:italic;">sparkle</em> to every space
+        </h2>
+        <p class="mb-3" style="color:#5b7880; line-height:1.8;">
+          Purivo is a professional cleaning company based in Abuja, Nigeria. We believe a clean space isn't a luxury — it's the foundation for a better home and a more productive workplace.
+        </p>
+        <p class="mb-4" style="color:#5b7880; line-height:1.8;">
+          Every member of our team is trained, vetted, and equipped with eco-friendly products so you can trust us in your home or office, every time.
+        </p>
+        <a href="service.html" class="btn rounded-pill px-4 py-2 text-white" style="background:#1f8a9a; font-weight:500;">
+          Our Services &rarr;
+        </a>
+      </div>
+
+      <!-- Right: Stats Grid -->
+      <div class="col-lg-6">
+        <div class="row g-3">
+
+          <div class="col-6">
+            <div class="text-center p-4 rounded-4 bg-white" style="border:1.5px solid #daedf1;">
+              <div class="fw-bold mb-1" style="font-size:2.2rem; color:#1f8a9a; line-height:1;">500+</div>
+              <div class="small" style="color:#5b7880;">Spaces Cleaned</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="text-center p-4 rounded-4 bg-white" style="border:1.5px solid #daedf1;">
+              <div class="fw-bold mb-1" style="font-size:2.2rem; color:#1f8a9a; line-height:1;">100%</div>
+              <div class="small" style="color:#5b7880;">Vetted Team</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="text-center p-4 rounded-4 bg-white" style="border:1.5px solid #daedf1;">
+              <div class="fw-bold mb-1" style="font-size:2.2rem; color:#1f8a9a; line-height:1;">4.9★</div>
+              <div class="small" style="color:#5b7880;">Customer Rating</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="text-center p-4 rounded-4 bg-white" style="border:1.5px solid #daedf1;">
+              <div class="fw-bold mb-1" style="font-size:2.2rem; color:#1f8a9a; line-height:1;">3+</div>
+              <div class="small" style="color:#5b7880;">Years in Abuja</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- FOOTER -->
     <footer class="footer-bg text-white pt-5 pb-0">
@@ -82,12 +383,11 @@
                 <div class="col-6 col-md-4">
                     <h6 class="text-uppercase text-white-50 fw-bold small mb-3">Contact Us</h6>
                     <div class="d-flex flex-column gap-2 small">
-                        <a href="tel:+2348000000000" class="text-white-75 text-decoration-none footer-link">📞 +234 800
+                        <a href="tel:+2348000000000" class="text-white-75 text-decoration-none footer-link"><i class="fas fa-phone-alt"></i> +234 800
                             000 0000</a>
-                        <a href="mailto:hello@purivo.com" class="text-white-75 text-decoration-none footer-link">✉️
-                            hello@purivo.com</a>
-                        <p class="text-white-75 mb-0">📍 Abuja, Nigeria</p>
-                        <p class="text-white-75 mb-0">🕐 Mon – Sat, 8am – 6pm</p>
+                        <a href="mailto:hello@purivo.com" class="text-white-75 text-decoration-none footer-link"><i class="fas fa-envelope"></i>hello@purivo.com</a>
+                        <p class="text-white-75 mb-0"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</p>
+                        <p class="text-white-75 mb-0"><i class="fas fa-clock"></i> Mon – Sat, 8am – 6pm</p>
                     </div>
                 </div>
 

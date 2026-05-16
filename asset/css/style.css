@@ -1,15 +1,15 @@
 /* Hero section */
-main {
+/* main {
     background-image: url(../img/clean.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     min-height: 95vh;
-}
+} */
 
 /* Footer background color */
 .footer-bg {
-    background-color: #1d6feb;
+    background-color: #1f8a9a;
 }
 
 /* Footer link hover */
@@ -20,10 +20,19 @@ main {
 
 /* Nav link hover */
 .nav-link:hover {
-    color: orangered !important;
+    /* color: orangered !important; */
+}
+.nav-item a{
+    color:#5b7880 !important;
 }
 
 /* Book Now button hover */
 .btn-primary:hover {
     background-color: darkgreen !important;
 }
+.d-flex a{
+    text-decoration: none;
+    color: white;
+}
+/* .nav-login:hover { background: var(--teal-dark) !important; } */
+.Nav-link.active { color: #1f8a9a !important; }
