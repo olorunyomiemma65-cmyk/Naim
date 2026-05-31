@@ -1,215 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purivo — Contact Us</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./asset/8232913-200.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./asset/css/contact.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Purivo Cleaning</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --teal:      #1f8a9a;
+      --teal-dark: #155f6b;
+      --teal-pale: #e6f5f7;
+      --teal-mid:  #a8dce4;
+      --ink:       #0d1f24;
+      --muted:     #5b7880;
+      --cream:     #f7fafb;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--ink); overflow-x: hidden; }
+
+    /* NAV */
+    .navbar {
+      height: 66px;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.92) !important;
+      border-bottom: 1px solid #e0edef;
+    }
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--teal-dark) !important;
+    }
+    .navbar-brand img { width: 36px; height: 36px; border-radius: 50%; }
+    .nav-link { font-size: .88rem; font-weight: 500; color: var(--muted) !important; transition: color .2s; }
+    .nav-link:hover, .nav-link.active { color: var(--teal) !important; }
+    .nav-login {
+      background: var(--teal) !important; color: #fff !important;
+      border-radius: 100px; padding: .4rem 1.2rem !important;
+    }
+    .nav-login:hover { background: var(--teal-dark) !important; }
+
+    /* HERO */
+    .hero {
+      padding: 90px 0 80px;
+      background: linear-gradient(155deg, #ddf0f4 0%, #c5e9f0 55%, #aadfe9 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,138,154,.18) 0%, transparent 70%);
+      top: -100px; right: -80px; pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(31,138,154,.14); color: var(--teal-dark);
+      font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 100px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; color: var(--ink);
+    }
+    .hero h1 em { color: var(--teal); font-style: italic; }
+
+    /* CONTACT INFO CARDS */
+    .info-card {
+      background: #fff;
+      border: 1.5px solid #daedf1;
+      border-radius: 16px;
+      padding: 1.6rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(31,138,154,.12);
+    }
+    .info-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--teal-pale); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .info-card h6 { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .info-card a, .info-card p { font-size: .92rem; color: var(--ink); font-weight: 500; text-decoration: none; margin: 0; }
+    .info-card a:hover { color: var(--teal); }
+
+    /* FORM CARD */
+    .form-card {
+      background: #fff;
+      border: 1.5px solid #daedf1;
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+    .form-label { font-size: .85rem; font-weight: 600; color: var(--ink); margin-bottom: .4rem; }
+    .form-control, .form-select {
+      border: 1.5px solid #d4e8ec;
+      border-radius: 10px;
+      font-size: .9rem;
+      padding: .7rem 1rem;
+      color: var(--ink);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(31,138,154,.12);
+      outline: none;
+    }
+    /* validation states */
+    .form-control.is-valid, .form-select.is-valid {
+      border-color: #28a745 !important;
+      background-image: none;
+    }
+    .form-control.is-invalid, .form-select.is-invalid {
+      border-color: #dc3545 !important;
+      background-image: none;
+    }
+    .error-msg {
+      font-size: .78rem;
+      color: #dc3545;
+      margin-top: .3rem;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+
+    textarea.form-control { resize: vertical; min-height: 130px; }
+
+    .submit-btn {
+      background: var(--teal); color: #fff;
+      border: none; border-radius: 100px;
+      padding: .85rem 2rem; font-weight: 500; font-size: .95rem;
+      width: 100%; cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .submit-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(31,138,154,.3); }
+    .submit-btn:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+
+    /* SUCCESS ALERT */
+    .success-alert {
+      display: none;
+      background: #e6f5f7; border: 1.5px solid var(--teal-mid);
+      border-radius: 12px; padding: 1.2rem 1.5rem;
+      color: var(--teal-dark); font-size: .92rem; font-weight: 500;
+      align-items: center; gap: 10px;
+    }
+    .success-alert.show { display: flex; }
+
+    /* MAP placeholder */
+    .map-wrap {
+      border-radius: 16px; overflow: hidden;
+      border: 1.5px solid #daedf1;
+      height: 240px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    /* FOOTER */
+    .site-footer { background: #061014; color: rgba(255,255,255,.5); }
+    .f-logo { font-family: 'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; color:#fff; }
+    .f-tag  { font-size:.77rem; color:rgba(255,255,255,.32); letter-spacing:.06em; }
+    .f-links a { text-decoration:none; font-size:.83rem; color:rgba(255,255,255,.45); transition:color .2s; }
+    .f-links a:hover { color:#fff; }
+  </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top px-3 px-md-4">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-primary" href="index.html">
-            <img src="./asset/img/8232913-200.png" alt="Purivo Logo" width="34" height="34" style="object-fit:contain;">
-            <span style="color: #1f8a9a;">Purivo</span>
+<!-- NAV -->
+<nav class="navbar navbar-expand-md sticky-top px-4 px-lg-5">
+  <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+    <img src="https://purivo.vercel.app/asset/img/8232913-200.png" alt="Purivo"/>
+    Purivo
+  </a>
+  <button class="navbar-toggler border-0 shadow-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+    <ul class="navbar-nav align-items-md-center gap-1 py-3 py-md-0">
+      <li class="nav-item"><a href="index.html" class="nav-link px-3">Home</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link px-3">Services</a></li>
+      <li class="nav-item"><a href="booking.html" class="nav-link px-3">Booking</a></li>
+      <li class="nav-item"><a href="Contact.html" class="nav-link px-3 active">Contact Us</a></li>
+      <li class="nav-item ms-md-2">
+        <a href="login.html" class="nav-link nav-login">
+          <i class="fa-regular fa-user me-1"></i> Login
         </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
-            aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<!-- HERO -->
+<section class="hero text-center">
+  <div class="container position-relative">
+    <div class="hero-label mb-3">
+      <i class="fa-solid fa-headset me-1"></i> Get In Touch
+    </div>
+    <h1 class="mb-3">We'd Love to <em>Hear</em><br>From You</h1>
+    <p class="mx-auto" style="color:var(--muted); max-width:480px; font-size:.97rem; line-height:1.75; font-weight:300;">
+      Questions, bookings, or feedback — our team is ready to help you get the cleanest space in Abuja.
+    </p>
+  </div>
+</section>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navLinks">
-            <ul class="navbar-nav gap-lg-3 fw-medium">
-                <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-dark"  href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="booking.html">Booking</a></li>
-                <li class="nav-item"><a class="nav-link active fw-semibold" href="contact.html" style="color:#1f8a9a;">Contact us</a></li>
-            </ul>
+<!-- CONTACT INFO CARDS -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-card d-flex align-items-center gap-3">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h6 class="mb-1">Phone</h6>
+            <a href="tel:+2347031959291">+234 703 195 9291</a>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <!-- HERO -->
-    <section class="hero">
-        <p class="hero-tag">Get in touch</p>
-        <h1>We'd love to <em>hear from you</em></h1>
-        <p class="hero-sub">Questions, bookings, or feedback — we're here to help.</p>
-    </section>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-card d-flex align-items-center gap-3">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <h6 class="mb-1">Email</h6>
+            <a href="mailto:hello@purivo.com">hello@purivo.com</a>
+          </div>
+        </div>
+      </div>
 
-    <!-- MAIN -->
-    <main class="main">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-card d-flex align-items-center gap-3">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h6 class="mb-1">Location</h6>
+            <p>Abuja, Nigeria</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- LEFT — Info cards -->
-        <div class="info-col">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-card d-flex align-items-center gap-3">
+          <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <h6 class="mb-1">Working Hours</h6>
+            <p>Mon – Sat, 8am – 6pm</p>
+          </div>
+        </div>
+      </div>
 
-            <div class="info-card">
-                <div class="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                    </svg>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + MAP -->
+<section class="py-5" style="background:var(--cream);">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- FORM -->
+      <div class="col-12 col-lg-7">
+        <div class="form-card">
+          <h4 class="fw-bold mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--ink);">
+            Send Us a Message
+          </h4>
+          <p class="mb-4" style="color:var(--muted); font-size:.88rem;">
+            Fill in the form below and we'll get back to you within 24 hours.
+          </p>
+
+          <!-- Success alert -->
+          <div class="success-alert mb-4" id="successAlert">
+            <i class="fa-solid fa-circle-check fa-lg"></i>
+            <span>Message sent! We'll get back to you within 24 hours.</span>
+          </div>
+
+          <div id="contactForm">
+
+            <!-- Row 1: Name + Email -->
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="fullName">
+                  <i class="fa-regular fa-user me-1" style="color:var(--teal);"></i> Full Name
+                </label>
+                <input type="text" class="form-control" id="fullName" placeholder="e.g. Amaka Johnson"/>
+                <div class="error-msg" id="fullNameErr">
+                  <i class="fa-solid fa-triangle-exclamation me-1"></i> Please enter your full name.
                 </div>
-                <div class="info-text">
-                    <span class="info-label">Phone</span>
-                    <a class="info-value" href="tel:+2347031959291">+234 703 195 9291</a>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="email">
+                  <i class="fa-regular fa-envelope me-1" style="color:var(--teal);"></i> Email Address
+                </label>
+                <input type="email" class="form-control" id="email" placeholder="e.g. amaka@email.com"/>
+                <div class="error-msg" id="emailErr">
+                  <i class="fa-solid fa-triangle-exclamation me-1"></i> Please enter a valid email address.
                 </div>
+              </div>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
+            <!-- Row 2: Phone + Subject -->
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="phone">
+                  <i class="fa-solid fa-phone me-1" style="color:var(--teal);"></i> Phone Number
+                </label>
+                <input type="tel" class="form-control" id="phone" placeholder="e.g. 08012345678"/>
+                <div class="error-msg" id="phoneErr">
+                  <i class="fa-solid fa-triangle-exclamation me-1"></i> Please enter a valid Nigerian phone number.
                 </div>
-                <div class="info-text">
-                    <span class="info-label">Email</span>
-                    <a class="info-value" href="mailto:hello@purivo.com">hello@purivo.com</a>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="subject">
+                  <i class="fa-solid fa-tag me-1" style="color:var(--teal);"></i> Subject
+                </label>
+                <select class="form-select" id="subject">
+                  <option value="">Select a subject</option>
+                  <option>Home Cleaning Enquiry</option>
+                  <option>Office Cleaning Enquiry</option>
+                  <option>Deep Cleaning Enquiry</option>
+                  <option>Booking Question</option>
+                  <option>Complaint / Feedback</option>
+                  <option>Other</option>
+                </select>
+                <div class="error-msg" id="subjectErr">
+                  <i class="fa-solid fa-triangle-exclamation me-1"></i> Please select a subject.
                 </div>
+              </div>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                </div>
-                <div class="info-text">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">Abuja, Nigeria</span>
-                </div>
+            <!-- Message -->
+            <div class="mb-4">
+              <label class="form-label" for="message">
+                <i class="fa-regular fa-message me-1" style="color:var(--teal);"></i> Message
+              </label>
+              <textarea class="form-control" id="message" placeholder="Tell us how we can help you..."></textarea>
+              <div class="error-msg" id="messageErr">
+                <i class="fa-solid fa-triangle-exclamation me-1"></i> Please enter a message (at least 10 characters).
+              </div>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                </div>
-                <div class="info-text">
-                    <span class="info-label">Working Hours</span>
-                    <span class="info-value">Mon – Sat, 8am – 6pm</span>
-                </div>
-            </div>
+            <!-- Submit -->
+            <button class="submit-btn" id="submitBtn" onclick="validateForm()">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
 
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Map + Social -->
+      <div class="col-12 col-lg-5">
+
+        <!-- Map -->
+        <div class="mb-4">
+          <h5 class="fw-bold mb-3" style="font-family:'Cormorant Garamond',serif; color:var(--ink);">
+            <i class="fa-solid fa-map-location-dot me-2" style="color:var(--teal);"></i> Find Us
+          </h5>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.45129522406!2d6.994293!3d9.057854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e745f4cd62fd9%3A0x53bd17b4a20ea12b!2sAbuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1700000000000"
+              allowfullscreen="" loading="lazy"></iframe>
+          </div>
         </div>
 
-        <!-- RIGHT — Contact form -->
-        <div class="form-col">
-            <p class="form-title">Send us a message</p>
-
-            <form id="contact-form" novalidate>
-
-                <div class="row g-3 mb-3">
-                    <div class="col-12 col-md-6">
-                        <div class="field">
-                            <label for="c-name">Full Name</label>
-                            <input type="text" id="c-name" placeholder="Nuel Johnson" required>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="field">
-                            <label for="c-email">Email Address</label>
-                            <input type="email" id="c-email" placeholder="you@example.com" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label for="c-phone">Phone Number</label>
-                    <input type="tel" id="c-phone" placeholder="+234 800 123 4567">
-                </div>
-
-                <div class="field">
-                    <label for="c-subject">Subject</label>
-                    <input type="text" id="c-subject" placeholder="How can we help?" required>
-                </div>
-
-                <div class="field">
-                    <label for="c-message">Message</label>
-                    <textarea id="c-message" placeholder="Write your message here..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn-send" id="send-btn">Send Message</button>
-
-            </form>
+        <!-- Social links -->
+        <div class="form-card">
+          <h6 class="fw-bold mb-3" style="color:var(--ink); font-size:.95rem;">
+            <i class="fa-solid fa-share-nodes me-2" style="color:var(--teal);"></i> Follow Us
+          </h6>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" style="text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:#e6f5f7;color:var(--teal);
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                transition:background .2s,transform .2s;"
+                onmouseover="this.style.background='var(--teal)';this.style.color='#fff';this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='#e6f5f7';this.style.color='var(--teal)';this.style.transform='';">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+            </a>
+            <a href="#" style="text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:#e6f5f7;color:var(--teal);
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                transition:background .2s,transform .2s;"
+                onmouseover="this.style.background='var(--teal)';this.style.color='#fff';this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='#e6f5f7';this.style.color='var(--teal)';this.style.transform='';">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+            </a>
+            <a href="#" style="text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:#e6f5f7;color:var(--teal);
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                transition:background .2s,transform .2s;"
+                onmouseover="this.style.background='var(--teal)';this.style.color='#fff';this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='#e6f5f7';this.style.color='var(--teal)';this.style.transform='';">
+                <i class="fa-brands fa-x-twitter"></i>
+              </div>
+            </a>
+            <a href="https://wa.me/2347031959291" style="text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:#e6f5f7;color:var(--teal);
+                display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+                transition:background .2s,transform .2s;"
+                onmouseover="this.style.background='#25D366';this.style.color='#fff';this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='#e6f5f7';this.style.color='var(--teal)';this.style.transform='';">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+            </a>
+          </div>
         </div>
 
-    </main>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="contact-footer">
-        <p>© 2026 Purivo Cleaning Services · Abuja, Nigeria</p>
-    </footer>
+<!-- FOOTER -->
+<footer class="site-footer py-5">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pb-4 mb-4"
+      style="border-bottom:1px solid rgba(255,255,255,.08);">
+      <div>
+        <div class="f-logo"><i class="fa-solid fa-droplet me-1" style="color:var(--teal);"></i> Purivo</div>
+        <div class="f-tag mt-1">Clean · Fresh · Pure</div>
+      </div>
+      <div class="f-links d-flex flex-wrap gap-3">
+        <a href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
+        <a href="services.html"><i class="fa-solid fa-broom me-1"></i>Services</a>
+        <a href="booking.html"><i class="fa-solid fa-calendar me-1"></i>Booking</a>
+        <a href="Contact.html"><i class="fa-solid fa-envelope me-1"></i>Contact</a>
+        <a href="login.html"><i class="fa-regular fa-user me-1"></i>Login</a>
+      </div>
+    </div>
+    <p class="text-center mb-0" style="font-size:.78rem;">
+      © 2026 Purivo Cleaning Services · Abuja, Nigeria. All rights reserved.
+    </p>
+  </div>
+</footer>
 
-    <!-- Toast -->
-    <div class="toast-container" id="toasts"></div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── LIVE VALIDATION (clears errors as user types) ──
+  document.getElementById('fullName').addEventListener('input', function () {
+    clearError(this, 'fullNameErr');
+  });
+  document.getElementById('email').addEventListener('input', function () {
+    clearError(this, 'emailErr');
+  });
+  document.getElementById('phone').addEventListener('input', function () {
+    clearError(this, 'phoneErr');
+  });
+  document.getElementById('subject').addEventListener('change', function () {
+    clearError(this, 'subjectErr');
+  });
+  document.getElementById('message').addEventListener('input', function () {
+    clearError(this, 'messageErr');
+  });
 
-    <script>
-        var EMAILJS_PUBLIC_KEY  = "iILXzLMx1IdEjijmu";
-        var EMAILJS_SERVICE_ID  = "service_n8iz2kp";
-        var CONTACT_TEMPLATE_ID = "template_psl4zvo";
+  function clearError(field, errId) {
+    field.classList.remove('is-invalid');
+    if (field.value.trim()) {
+      field.classList.add('is-valid');
+      document.getElementById(errId).classList.remove('show');
+    }
+  }
 
-        function toast(type, title, msg) {
-            var icons = { success: '✓', error: '✕' };
-            var container = document.getElementById('toasts');
-            var el = document.createElement('div');
-            el.className = 'toast ' + type;
-            el.innerHTML = '<div class="toast-icon">' + (icons[type]||'◆') + '</div><div class="toast-body"><div class="toast-title">' + title + '</div><div class="toast-msg">' + msg + '</div></div>';
-            container.appendChild(el);
-            setTimeout(function() {
-                el.classList.add('removing');
-                setTimeout(function() { el.remove(); }, 300);
-            }, 4000);
-        }
+  // ── MAIN VALIDATION ──
+  function validateForm() {
+    let isValid = true;
 
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    const fullName = document.getElementById('fullName');
+    const email    = document.getElementById('email');
+    const phone    = document.getElementById('phone');
+    const subject  = document.getElementById('subject');
+    const message  = document.getElementById('message');
 
-            var name    = document.getElementById('c-name').value.trim();
-            var email   = document.getElementById('c-email').value.trim();
-            var phone   = document.getElementById('c-phone').value.trim();
-            var subject = document.getElementById('c-subject').value.trim();
-            var message = document.getElementById('c-message').value.trim();
+    // Reset all
+    [fullName, email, phone, subject, message].forEach(f => {
+      f.classList.remove('is-invalid', 'is-valid');
+    });
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('show'));
 
-            if (!name)    { toast('error', 'Missing name',    'Please enter your full name.'); return; }
-            if (!email)   { toast('error', 'Missing email',   'Please enter your email address.'); return; }
-            if (!subject) { toast('error', 'Missing subject', 'Please enter a subject.'); return; }
-            if (!message) { toast('error', 'Missing message', 'Please write your message.'); return; }
+    // Full Name — required, at least 3 chars
+    if (fullName.value.trim().length < 3) {
+      showError(fullName, 'fullNameErr');
+      isValid = false;
+    } else {
+      fullName.classList.add('is-valid');
+    }
 
-            var btn = document.getElementById('send-btn');
-            btn.disabled    = true;
-            btn.textContent = 'Sending...';
+    // Email — required, valid format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+      showError(email, 'emailErr');
+      isValid = false;
+    } else {
+      email.classList.add('is-valid');
+    }
 
-            emailjs.init(EMAILJS_PUBLIC_KEY);
-            emailjs.send(EMAILJS_SERVICE_ID, CONTACT_TEMPLATE_ID, {
-                from_name:  name,
-                from_email: email,
-                phone:      phone || 'Not provided',
-                subject:    subject,
-                message:    message
-            }).then(function() {
-                btn.disabled    = false;
-                btn.textContent = 'Send Message';
-                toast('success', 'Message sent!', "We'll get back to you shortly.");
-                document.getElementById('contact-form').reset();
-            }).catch(function(err) {
-                console.error('EmailJS error:', err);
-                btn.disabled    = false;
-                btn.textContent = 'Send Message';
-                toast('error', 'Failed to send', 'Please try again or call us directly.');
-            });
+    // Phone — Nigerian format: 07/08/09/+234, 11 digits local or 13 with +234
+    const phoneRegex = /^(\+234|0)[789][01]\d{8}$/;
+    if (!phoneRegex.test(phone.value.trim().replace(/\s/g, ''))) {
+      showError(phone, 'phoneErr');
+      isValid = false;
+    } else {
+      phone.classList.add('is-valid');
+    }
+
+    // Subject — must select one
+    if (subject.value === '') {
+      showError(subject, 'subjectErr');
+      isValid = false;
+    } else {
+      subject.classList.add('is-valid');
+    }
+
+    // Message — at least 10 characters
+    if (message.value.trim().length < 10) {
+      showError(message, 'messageErr');
+      isValid = false;
+    } else {
+      message.classList.add('is-valid');
+    }
+
+    // If all valid — simulate submit
+    if (isValid) {
+      submitForm();
+    }
+  }
+
+  function showError(field, errId) {
+    field.classList.add('is-invalid');
+    document.getElementById(errId).classList.add('show');
+  }
+
+  function submitForm() {
+    const btn = document.getElementById('submitBtn');
+
+    // Show loading state
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+    // Simulate sending (replace with real fetch/EmailJS/Firebase call)
+    setTimeout(() => {
+      // Hide form, show success
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('successAlert').classList.add('show');
+
+      // Reset after 5 seconds
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'block';
+        document.getElementById('successAlert').classList.remove('show');
+        document.getElementById('contactForm').querySelectorAll('input, textarea, select').forEach(f => {
+          f.value = '';
+          f.classList.remove('is-valid', 'is-invalid');
         });
-    </script>
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+      }, 5000);
+    }, 1500);
+  }
+</script>
 
 </body>
 </html>
