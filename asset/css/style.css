@@ -9,7 +9,11 @@
 
 /* Footer background color */
 .footer-bg {
-    background-color: #1f8a9a;
+    background: #061014; color: rgba(255,255,255,.5); 
+    font-family: 'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; color:#fff; 
+     font-size:.77rem; color:rgba(255,255,255,.32); letter-spacing:.06em; 
+    text-decoration:none; font-size:.83rem; color:rgba(255,255,255,.45); transition:color .2s; 
+   
 }
 
 /* Footer link hover */
@@ -20,7 +24,7 @@
 
 /* Nav link hover */
 .nav-link:hover {
-    /* color: orangered !important; */
+    color: #fff !important;
 }
 .nav-item a{
     color:#5b7880 !important;
@@ -35,3 +39,9 @@
     color: white;
 }
 .nav-link:hover, .nav-link.active { color: #1f8a9a !important; }
+   .navbar {
+      height: 66px;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.92) !important;
+      border-bottom: 1px solid #e0edef;
+    }
