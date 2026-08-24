@@ -86,18 +86,24 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
     savePromise.then(function() {
         // Step 2 — Send confirmation email via EmailJS
         emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        var messageBody =
+            'Your booking has been confirmed.\n\n' +
+            'Service:   ' + selectedService + '\n' +
+            'Date:      ' + formattedDate + '\n' +
+            'Time:      ' + time + '\n' +
+            'Address:   ' + address + '\n' +
+            'Rooms:     ' + rooms + '\n' +
+            'Frequency: ' + freq + '\n' +
+            'Price:     ' + selectedPrice + '\n' +
+            'Phone:     ' + phone + '\n' +
+            'Notes:     ' + (notes || 'None');
+
         return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
             to_email:      email,
             customer_name: name,
-            service:       selectedService,
-            date:          formattedDate,
-            time:          time,
-            address:       address,
-            rooms:         rooms,
-            frequency:     freq,
-            price:         selectedPrice,
-            phone:         phone,
-            notes:         notes || 'None'
+            subject_line:  'Purivo Booking Confirmed — ' + selectedService,
+            message_body:  messageBody
         });
     }).then(function() {
         btn.disabled    = false;
